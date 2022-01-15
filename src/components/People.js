@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { addPerson, removePerson } from "../redux";
 import { useSelector, useDispatch } from "react-redux";
 
