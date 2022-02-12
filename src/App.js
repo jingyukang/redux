@@ -1,8 +1,12 @@
 import "./App.css";
-import { Provider } from "react-redux";
+import Counter from "./features/counter/Counter";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Counter />
+    </div>
+  );
 }
 
 export default App;
