@@ -1,11 +1,32 @@
 import "./App.css";
-import Counter from "./features/counter/Counter";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { PostsList } from "./features/posts/PostsList";
+import AddPostForm from "./features/posts/AddPostForm";
 
 function App() {
   return (
-    <div className="App">
-      <Counter />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <AddPostForm />
+                <PostsList />
+              </>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
