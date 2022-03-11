@@ -7,10 +7,14 @@ import {
 } from "react-router-dom";
 import { PostsList } from "./features/posts/PostsList";
 import AddPostForm from "./features/posts/AddPostForm";
+import SinglePostPage from "./features/posts/SinglePostPage";
+import { Navbar } from "./app/Navbar";
+import { EditPostForm } from "./features/posts/EditPostForm";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <div className="App">
         <Routes>
           <Route
@@ -23,6 +27,8 @@ function App() {
               </>
             }
           />
+          <Route exact path="/posts/:postId" element={<SinglePostPage />} />
+          <Route exact path="/editPost/:postId" element={<EditPostForm />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
